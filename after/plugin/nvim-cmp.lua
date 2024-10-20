@@ -1,4 +1,4 @@
--- Setup nvim-cmp.
+-- nvim-cmp is the autocomplete plugin. It is extremely useful in order to make neovim closer to an IDE and more than just a text editor.
 local cmp = require'cmp'
 
 cmp.setup({
@@ -23,7 +23,7 @@ cmp.setup({
   })
 })
 
--- Set configuration for specific filetype (like Python or C).
+-- Set configuration for specific filetype. I setup C and Python.
 cmp.setup.filetype('python', {
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
@@ -38,15 +38,7 @@ cmp.setup.filetype('c', {
   })
 })
 
--- Use buffer source for `/` and `?` (for searching).
-cmp.setup.cmdline({ '/', '?' }, {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
-  }
-})
-
--- Use path and cmdline source for ':' (for command-line autocompletion).
+-- path and cmdline sources for ':'s (for command-line autocompletion).
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
@@ -56,3 +48,13 @@ cmp.setup.cmdline(':', {
   })
 })
 
+
+
+-- Custom remaps
+-- Use buffer source for `/` and `?` (for searching).
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})

@@ -1,7 +1,7 @@
 # nvimconfig
 This is my personal neovim configuration based on ThePrimeagen's video https://youtu.be/w7i4amO_zaE?si=MmjuNG6dObuE-CWc tutorial on neovim configuration.
 
-It features harpoon, telesscope, mason lsp, fuzzy finder, & more (link everything later).
+It features harpoon, telescope, mason lsp, fuzzy finder, & more (link everything later).
 
 ## Overview
 
@@ -25,3 +25,14 @@ nvim .
 Mason should not be needed to install lsps
 
 If work with python, create lspvenv, if not remove from the required lsps text the one that points at python?
+
+
+
+
+
+
+
+
+
+
+
