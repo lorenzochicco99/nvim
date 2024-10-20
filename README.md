@@ -41,6 +41,7 @@ My tip is to avoid using vim perfectly, avoid trying to become good at all the c
 ## Overview
 
 This is the tree structure of the repo: 
+```
 nvim
 ├── init.lua
 ├── after
@@ -58,7 +59,7 @@ nvim
     └── savconfig
         ├── packer.lua
         └── remap.lua
-
+```
 `init.lua`: the file that will call `packer.lua` and `remap.lua`. `packer.lua` will ensure that all required packages are correctly installed (if they aren't, it will install them), `remap.lua` will do some required remaps (a remap consists in taking the original function of a keybinding and switch it into another custom one).
 
 Every `.lua` file inside `after/plugin` is a custom configuration for the corresponding package. I suggest you exploring those in order to understand the main key combinations used in each package. FYI: the folders are called `after/plugin` because nvim automatically looks for that folder to understand how to setup packages correctly, so the names are "special".
