@@ -1,2 +1,2 @@
-require("savconfig.packer")
-require("savconfig.remap")
+require("config.packer")
+require("config.remap")
