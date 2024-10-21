@@ -8,7 +8,7 @@ It features [Harpoon](https://github.com/ThePrimeagen/harpoon/), [Telescope](htt
 
 
 ## Setup
-The setup assumes that you are working from a debian based distro such as ubuntu.
+The setup assumes that you are working from a debian based distro such as ubuntu. **Please run line by line and read comments.**
 ```
 sudo apt install neovim
 cd 
