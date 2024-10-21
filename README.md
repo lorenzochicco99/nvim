@@ -31,7 +31,7 @@ nvim .
 nvim .
 ```
 
-Neovim is now ready to be used. Type :Tutor and follow its instructions. 
+Neovim is now ready to be used. Type `:Tutor` and follow its instructions. 
 
 At the beginning it's going to be extremely cumbersome to learn how to use vim movements and commands. 
 You will continue to **grab your mouse** and be sad because **you can't use ctrl+c to copy text from nvim to external sources** (use `"+y`), you will **use the cursor or arrows** instead of hjkl to navigate files, you will **forget keybinds** you just looked up and will do many more **mistakes**. Note that you **WILL BE SLOWER** at the beginning, it's a small price to pay for (in my opinion) many benefits.
