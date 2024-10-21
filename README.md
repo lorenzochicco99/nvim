@@ -2,9 +2,9 @@
 
 Why you may want to learn neovim -> linkedin post.
 
-This is my personal neovim configuration based on ThePrimeagen's video https://youtu.be/w7i4amO_zaE?si=MmjuNG6dObuE-CWc tutorial on neovim configuration.
+This is my personal neovim configuration based on [ThePrimeagen's video](https://youtu.be/w7i4amO_zaE?si=MmjuNG6dObuE-CWc) tutorial on neovim configuration.
 
-It features Harpoon, Telescope, LSPs & more.
+It features [Harpoon](https://github.com/ThePrimeagen/harpoon/), [Telescope](https://github.com/nvim-telescope/telescope.nvim), LSPs & more.
 
 
 ## Setup
@@ -59,16 +59,17 @@ nvim
         ├── packer.lua
         └── remap.lua
 ```
+
 `init.lua`: the file that will call `packer.lua` and `remap.lua`. `packer.lua` will ensure that all required packages are correctly installed (if they aren't, it will install them), `remap.lua` will do some required remaps (a remap consists in taking the original function of a keybinding and switch it into another custom one).
 
-Every `.lua` file inside `after/plugin` is a custom configuration for the corresponding package. I suggest you exploring those in order to understand the main key combinations used in each package. FYI: the folders are called `after/plugin` because nvim automatically looks for that folder to understand how to setup packages correctly, so the names are "special".
+Every `.lua` file inside `after/plugin` is a custom configuration for the corresponding package. I suggest you exploring those in order to understand the main key combinations used in each package. FYI: the folders are called `after/plugin` because nvim automatically looks for that folder to understand how to setup packages correctly, so these directory names are "special".
 
 Rather, I will tell what are the needed extentions to learn and how important they are (imo).
 
 ## Learning path
 
 ### Basics
-Vim works in "modes". There are different modes (https://vimhelp.org/intro.txt.html#vim-modes), but the main ones are 3. You can think about these as different keyboard layouts stacked on top of each other, based on what you want to do you will use the corresponding one. You should already be familiar with this concept if you completed the `:Tutor` as I suggested before. I can't stress it enough, please complete it as it explains everything related to movements and commands and how to concatenate the two. I assume that you completed it (Chapter 1 is the most important). 
+Vim works in "modes". There are different [modes](https://vimhelp.org/intro.txt.html#vim-modes), but the main ones are 3. You can think about these as different keyboard layouts stacked on top of each other, based on what you want to do you will use the corresponding one. You should already be familiar with this concept if you completed the `:Tutor` as I suggested before. I can't stress it enough, please complete it as it explains everything related to movements and commands and how to concatenate the two. I assume that you completed it (Chapter 1 is the most important). 
 
 1. Normal mode you can enter all editor commands, including those from plugins, as well as navigate through text. Note: when using commands such as `dd`, that is actually a "cut" command, not a "del". Make sure to paste first, delete later. 
 2. Visual mode allows you to highlight text, you can use either `v` for cursor highlight or `V` for line highlight. You can also use certain commands, such as delete or yank (more on this later).
@@ -96,8 +97,9 @@ Make sure you get comfortable using these and the following commands that you al
 - `u`
 - `Ctrl+r`
 
-### The first (second) plugin
-The first plugin (besides nvim-tree) that you will use is undotree. It allows you to switch between undo branches, a powerful feature of vim. Quoting mbbill/undotree repo:
+### Your first (second) plugin
+
+The first plugin (besides nvim-tree) that you will use is undotree. It allows you to switch between undo branches, a powerful feature of vim. Quoting the official [repo](https://github.com/mbbill/undotree):
 "They're a feature of Vim that allow you to go back to a prior state even after it has been overwritten by later edits. For example: In most editors, if you make some change A, followed by change B, then go back to A and make another change C, normally you wouldn't be able to go back to change B because the undo history is linear."
 In order to use it, simply hit.
 - `<leader>u`. **Note that `<leader>` means hitting space in normal mode**.
