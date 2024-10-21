@@ -10,9 +10,12 @@ It features [Harpoon](https://github.com/ThePrimeagen/harpoon/), [Telescope](htt
 ## Setup
 The setup assumes that you are working from a debian based distro such as ubuntu.
 ```
-sudo apt-get neovim
+sudo apt install neovim
 cd 
 cd .config/
+# if .config doesn't exist then 
+# mkdir .config
+# cd .config
 mkdir nvim/
 cd nvim
 git clone repo
