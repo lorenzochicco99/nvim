@@ -6,38 +6,6 @@ This is my personal neovim configuration based on [ThePrimeagen's video](https:/
 
 It features [Harpoon](https://github.com/ThePrimeagen/harpoon/), [Telescope](https://github.com/nvim-telescope/telescope.nvim), LSPs & more.
 
-
-## Setup
-The setup assumes that you are working from a debian based distro such as ubuntu. **Please run line by line and read comments.**
-```
-sudo apt install neovim
-cd 
-cd .config/
-# if .config doesn't exist then 
-# mkdir .config
-# cd .config
-git clone https://github.com/lorenzochicco99/nvim/
-# --optional if you need to work in python
-python3 -m venv lspvenv
-source lspvenv/bin/activate
-pip install `<your-packages>`
-# --replace `<your-packages>` with whatever you need, this environment is the one that neovim uses for syntax correction
-
-nvim .
-:PackerSync
-:q
-nvim .
-```
-
-Neovim is now ready to be used. Type `:Tutor` and follow its instructions. 
-
-At the beginning it's going to be extremely cumbersome to learn how to use vim movements and commands. 
-You will continue to **grab your mouse** and be sad because **you can't use ctrl+c to copy text from nvim to external sources** (use `"+y`), you will **use the cursor or arrows** instead of hjkl to navigate files, you will **forget keybinds** you just looked up and will do many more **mistakes**. Note that you **WILL BE SLOWER** at the beginning, it's a small price to pay for (in my opinion) many benefits.
-Vim works on a completely different paradigm compared to other editors, it's like going from a GUI to command line, but what do people end up sticking with?
-What will also happen, is that you will **feel more comfortable using your keyboard**, you will start **typing faster**, get mad at when you need to grab the mouse to do anything and **enjoy using these commands** that make you feel like you are doing combos in a fighting game. The point is that **you will have fun writing and working on a project**, which is good, because working and studying while having fun and being interested is good, a happy student is a good student!
-
-Lastly, my tip is to avoid using vim perfectly, avoid trying to become good at all the crazy commands that exist, it's impossible, start looking stuff up as you need it, if you feel like there is something that you need to work better, I'm 99% confident it exists. Keep a personal cheat sheet or use the one I will provide later on the guide (although it will not include the basic vim commands, but only the personal keybindings and remaps). I will also provide certain levels of mastery that you will need to go through, stay on a level until you feel like you mastered it and can do stuff easily.  
-
 ## Overview
 
 This is the tree structure of the repo: 
@@ -67,7 +35,45 @@ Every `.lua` file inside `after/plugin` is a custom configuration for the corres
 
 Rather, I will tell what are the needed extentions to learn and how important they are (imo).
 
+## Setup
+The setup assumes that you are working from a debian based distro such as ubuntu. **Please run line by line and read comments.**
+```
+sudo apt install neovim
+cd 
+cd .config/
+git clone https://github.com/lorenzochicco99/nvim/
+git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+cd nvim
+nvim .
+```
+After using `nvim .` you will get a bunch of errors because you don't have any plugins installed, keep hitting `esc` until you see an empty file. Now press `:Ex`, then hit `enter`. You should now see my repository correctly. Type `:PackerSync`, it will download all packages, then type `q`, then `:q`. Now do `nvim .` again, you will see in the bottom of the window that it will download everything required to run neovim smoothly, wait for it to finish. Once you have done that there is an extra step if you plan on working with Python. Again, all the following commands should not be run from inside NeoVim, but from the regular terminal while being in the `nvim` folder. This means that just hitting `:q` `enter` like before should set you in the correct folder.
+
+```
+# --optional if you need to work in python
+python3 -m venv lspvenv
+source lspvenv/bin/activate
+pip install `<your-packages>`
+# --replace `<your-packages>` with whatever you need, this environment is the one that neovim uses for syntax correction
+```
+
+Let's do the last two things in order to make the folder cleaner, navigate using `j` to go down and `k` to go up, position yourself over `README.md` and press `d` when prompted to delete the file or not, type `y` and press `enter`. Do the same for the `.git` folder. 
+
+Congratulations! Now you are ready to use NeoVim with my configuration.
+
+
+Neovim is now ready to be used. Type `:Tutor` and follow its instructions. 
+
 ## Learning path
+
+### What to expect
+At the beginning it's going to be extremely cumbersome to learn how to use vim movements and commands. 
+You will continue to **grab your mouse** and be sad because **you can't use ctrl+c to copy text from nvim to external sources** (use `"+y`), you will **use the cursor or arrows** instead of hjkl to navigate files, you will **forget keybinds** you just looked up and will do many more **mistakes**. Note that you **WILL BE SLOWER** at the beginning, it's a small price to pay for (in my opinion) many benefits.
+Vim works on a completely different paradigm compared to other editors, it's like going from a GUI to command line, but what do people end up sticking with?
+What will also happen, is that you will **feel more comfortable using your keyboard**, you will start **typing faster**, get mad at when you need to grab the mouse to do anything and **enjoy using these commands** that make you feel like you are doing combos in a fighting game. The point is that **you will have fun writing and working on a project**, which is good, because working and studying while having fun and being interested is good, a happy student is a good student!
+
+Lastly, my tip is to avoid using vim perfectly, avoid trying to become good at all the crazy commands that exist, it's impossible, start looking stuff up as you need it, if you feel like there is something that you need to work better, I'm 99% confident it exists. Keep a personal cheat sheet or use the one I will provide later on the guide (although it will not include the basic vim commands, but only the personal keybindings and remaps). I will also provide certain levels of mastery that you will need to go through, stay on a level until you feel like you mastered it and can do stuff easily.  
+
 
 ### Basics
 Vim works in "modes". There are different [modes](https://vimhelp.org/intro.txt.html#vim-modes), but the main ones are 3. You can think about these as different keyboard layouts stacked on top of each other, based on what you want to do you will use the corresponding one. You should already be familiar with this concept if you completed the `:Tutor` as I suggested before. I can't stress it enough, please complete it as it explains everything related to movements and commands and how to concatenate the two. I assume that you completed it (Chapter 1 is the most important). 
