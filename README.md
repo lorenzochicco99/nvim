@@ -16,9 +16,7 @@ cd .config/
 # if .config doesn't exist then 
 # mkdir .config
 # cd .config
-mkdir nvim/
-cd nvim
-git clone repo
+git clone https://github.com/lorenzochicco99/nvim/
 # --optional if you need to work in python
 python3 -m venv lspvenv
 source lspvenv/bin/activate
