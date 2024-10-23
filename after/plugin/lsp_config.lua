@@ -17,19 +17,22 @@ require('lspconfig').pyright.setup{
   },
 }
 
-require'lspconfig'.clangd.setup{
-  cmd = {
+require('lspconfig').clangd.setup({
+  cmd = { 
     "clangd",
-    "--background-index",               -- To speed up file indexing
-    "--clang-tidy",                     -- Use clang-tidy for code diagnostics
-    "--compile-commands-dir=build",     -- Optional, if you're using CMake or a build directory
-	-- Add more compile-args based on which packages are you using in C
-    "--compile-args=-I/usr/lib/x86_64-linux-gnu/openmpi/include",  -- MPI include directory
-    "--compile-args=/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi",  -- 2nd MPI include directory
+    "--background-index",
+    "--compile-commands-dir=.",  -- Changed from 'build' to current directory
+    -- Changed the format of compile args
+    "--query-driver=/usr/bin/gcc", -- Allow clangd to query GCC for include paths
   },
-  settings = {
-    clangd = {
-      compilationDatabasePath = "build",  -- Optional: Path to your build directory if you're using CMake
-    },
-  },
-}
+  root_dir = function()
+    return vim.fn.getcwd()
+  end,
+  init_options = {
+    compilationDatabasePath = ".",
+    fallbackFlags = {
+      "-I/usr/lib/x86_64-linux-gnu/openmpi/include",
+      "-I/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi"
+    }
+  }
+})
